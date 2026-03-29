@@ -1,0 +1,4 @@
+cd music-streaming-java
+git init
+git add .
+git commit -m "Initial commit - music streaming app"
