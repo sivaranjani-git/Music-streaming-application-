@@ -1,0 +1,42 @@
+import React from "react";
+
+export default function MusicStreamingAppUI() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <h1 className="text-3xl font-bold mb-6">🎵 Music Streaming App</h1>
+
+      {/* Login Section */}
+      <div className="bg-gray-800 p-4 rounded-2xl shadow mb-6">
+        <h2 className="text-xl mb-2">Login</h2>
+        <input className="w-full p-2 mb-2 text-black" placeholder="Email" />
+        <input className="w-full p-2 mb-2 text-black" placeholder="Password" type="password" />
+        <button className="bg-green-500 px-4 py-2 rounded">Login</button>
+      </div>
+
+      {/* Home Section */}
+      <div className="bg-gray-800 p-4 rounded-2xl shadow mb-6">
+        <h2 className="text-xl mb-2">Trending Songs</h2>
+        <div className="grid grid-cols-3 gap-4">
+          {["Song 1", "Song 2", "Song 3"].map((song) => (
+            <div key={song} className="bg-gray-700 p-3 rounded">
+              <p>{song}</p>
+              <button className="mt-2 bg-blue-500 px-2 py-1 rounded">Play</button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Player Section */}
+      <div className="bg-gray-800 p-4 rounded-2xl shadow">
+        <h2 className="text-xl mb-2">Now Playing</h2>
+        <p>Song Name - Artist</p>
+        <div className="flex gap-4 mt-2">
+          <button className="bg-gray-600 px-3 py-1 rounded">⏮</button>
+          <button className="bg-green-500 px-3 py-1 rounded">⏯</button>
+          <button className="bg-gray-600 px-3 py-1 rounded">⏭</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
