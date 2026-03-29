@@ -1,0 +1,22 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.static("songs"));
+
+mongoose.connect("mongodb://127.0.0.1:27017/music");
+
+const Song = mongoose.model("Song", {
+  title: String,
+  file: String
+});
+
+app.get("/api/songs", async (req, res) => {
+  const songs = await Song.find();
+  res.json(songs);
+});
+
+app.listen(5000, () => console.log("Server running"));
