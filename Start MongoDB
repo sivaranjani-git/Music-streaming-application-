@@ -1,0 +1,4 @@
+db.songs.insertMany([
+  { title: "Song One", file: "song1.mp3" },
+  { title: "Song Two", file: "song2.mp3" }
+])
